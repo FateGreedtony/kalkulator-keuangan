@@ -3,20 +3,22 @@
 #include <cstdio>
 using namespace std;
 
-double perhitunganPengeluaran(double a, double b){
+// pembuatan function
+
+double perhitunganPengeluaran(double &a, double b){
     return a -= b;
 }
 
-double perhitunganBunga(double a, double b){
+double perhitunganBunga(double &a, double b){
     return a *= b;
 }
 
-double  rerataPengeluaran(double a, double b){
+double  rerataPengeluaran(double &a, double b){
     return a /= b;
 }
 
 double sisaPengeluaran(int a, int b){
-    return a %= b;
+    return a % b;
 }
 
 int main(){
@@ -35,11 +37,16 @@ int main(){
     cout << "bagaimana dengan bunga tabunganmu?" << endl;
     cin >> bungaTabungan;
     
+    // perhitungan
+    perhitunganPengeluaran(pendapatan, pengeluaran);
+    perhitunganBunga(tabungan, bungaTabungan);
+    perhitunganBunga(tabungan, bungaTabungan);
+    
     // hasil perhitungan
     cout << "1. Pendapatan bulan ini: " << pendapatan << endl;
-    cout << "2. Sisa uang setelah pengeluaran bulan ini: " << perhitunganPengeluaran(pendapatan, pengeluaran) << endl;
-    cout << "3. tabungan sejauh ini: " << perhitunganBunga(tabungan, bungaTabungan) << endl;
-    cout << "4. rerata pengeluaranmu: " << rerataPengeluaran(pendapatan, pengeluaran) << endl;
+    cout << "2. Sisa uang setelah pengeluaran bulan ini: " << pendapatan << endl;
+    cout << "3. tabungan sejauh ini: " << tabungan << endl;
+    cout << "4. rerata pengeluaranmu: " << pendapatan << endl;
     cout << "5. sisa pengeluaranmu: " << sisaPengeluaran(pendapatan, pengeluaran) << endl;
  
     system("pause");
